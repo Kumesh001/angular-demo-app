@@ -11,4 +11,8 @@ COPY dist/ /usr/share/nginx/html
 
 EXPOSE 8080
 
+COPY --chown=1001:0 . /opt/app-root/src
+
 CMD ["nginx", "-g", "daemon off;"]
+
+
