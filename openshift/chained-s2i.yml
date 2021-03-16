@@ -1,23 +1,23 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: angular-5-example-chained-s2i
+  name: angular-demo-app-chained-s2i
 apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   creationTimestamp: '2018-01-08T20:54:22Z'
-  name: angular-5-example-chained-s2i
+  name: angular-demo-app-chained-s2i
   namespace: myproject
   resourceVersion: '45008'
   selfLink: >-
-    /apis/build.openshift.io/v1/namespaces/myproject/buildconfigs/angular-5-example-chained-s2i
+    /apis/build.openshift.io/v1/namespaces/myproject/buildconfigs/angular-demo-app-chained-s2i
   uid: 1a6150a7-f4b6-11e7-a959-525400d2f593
 spec:
   nodeSelector: null
   output:
     to:
       kind: ImageStreamTag
-      name: 'angular-5-example-nginx:latest'
+      name: 'angular-demo-app-nginx:latest'
   postCommit: {}
   resources: {}
   runPolicy: Serial
@@ -40,7 +40,7 @@ spec:
     images:
       - from:
           kind: ImageStreamTag
-          name: 'angular-5-example-s2i:latest'
+          name: 'angular-demo-app-s2i:latest'
         paths:
           - destinationDir: .
             sourcePath: /opt/app-root/src/dist
