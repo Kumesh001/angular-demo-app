@@ -12,7 +12,7 @@ COPY dist/ /usr/share/nginx/html
 
 EXPOSE 8080
 
-COPY --chown=1001:0 . /opt/app-root/src
+COPY --chown=1001:0 . /opt/app-root/src/dist/out-tsc/
 
 CMD ["nginx", "-g", "daemon off;"]
 
